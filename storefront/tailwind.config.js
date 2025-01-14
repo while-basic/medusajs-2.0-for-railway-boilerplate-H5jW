@@ -34,6 +34,11 @@ module.exports = {
           80: "#1F2937",
           90: "#111827",
         },
+        dark: {
+          bg: "#000000",
+          text: "#FFFFFF",
+          accent: "#1F2937",
+        },
       },
       borderRadius: {
         none: "0px",
