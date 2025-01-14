@@ -21,11 +21,11 @@ const StoreTemplate = async ({
   const sort = sortBy || "created_at"
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-dark-bg">
       {/* Store Header */}
-      <div className="relative bg-gray-900 py-16 sm:py-24">
+      <div className="relative bg-black py-16 sm:py-24">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900/95 to-gray-900/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-black/95 to-black/70"></div>
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-2xl">
@@ -52,11 +52,11 @@ const StoreTemplate = async ({
       </div>
 
       {/* Featured Categories */}
-      <div className="border-b border-gray-200 bg-white">
+      <div className="border-t border-dark-accent bg-black">
         <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             {/* Category 1 */}
-            <div className="group relative overflow-hidden rounded-lg bg-gray-100">
+            <div className="group relative overflow-hidden rounded-lg bg-dark-accent">
               <div className="aspect-h-1 aspect-w-1">
                 <div className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"></div>
               </div>
@@ -65,7 +65,7 @@ const StoreTemplate = async ({
               </div>
             </div>
             {/* Category 2 */}
-            <div className="group relative overflow-hidden rounded-lg bg-gray-100">
+            <div className="group relative overflow-hidden rounded-lg bg-dark-accent">
               <div className="aspect-h-1 aspect-w-1">
                 <div className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"></div>
               </div>
@@ -74,7 +74,7 @@ const StoreTemplate = async ({
               </div>
             </div>
             {/* Category 3 */}
-            <div className="group relative overflow-hidden rounded-lg bg-gray-100">
+            <div className="group relative overflow-hidden rounded-lg bg-dark-accent">
               <div className="aspect-h-1 aspect-w-1">
                 <div className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"></div>
               </div>
@@ -83,7 +83,7 @@ const StoreTemplate = async ({
               </div>
             </div>
             {/* Category 4 */}
-            <div className="group relative overflow-hidden rounded-lg bg-gray-100">
+            <div className="group relative overflow-hidden rounded-lg bg-dark-accent">
               <div className="aspect-h-1 aspect-w-1">
                 <div className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"></div>
               </div>
@@ -100,8 +100,8 @@ const StoreTemplate = async ({
         <div className="flex flex-col gap-8 small:flex-row small:items-start">
           {/* Filters Sidebar */}
           <div className="flex-shrink-0 small:sticky small:top-20 small:w-64">
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-              <h2 className="mb-4 text-lg font-medium">Refine Selection</h2>
+            <div className="rounded-lg border border-dark-accent bg-black/40 p-6 backdrop-blur-sm">
+              <h2 className="mb-4 text-lg font-medium text-white">Refine Selection</h2>
               <RefinementList sortBy={sort} />
             </div>
           </div>
@@ -109,30 +109,30 @@ const StoreTemplate = async ({
           {/* Products Grid */}
           <div className="flex-grow">
             <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-              <h2 className="text-xl font-medium" data-testid="store-page-title">
+              <h2 className="text-xl font-medium text-white" data-testid="store-page-title">
                 All Products
               </h2>
               
               {/* View Options */}
               <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2 rounded-lg border border-gray-200 p-2">
-                  <button className="rounded p-1 hover:bg-gray-100" title="Grid view">
-                    <LayoutGrid className="h-5 w-5 text-gray-600" />
+                <div className="flex items-center gap-2 rounded-lg border border-dark-accent bg-black/40 p-2 backdrop-blur-sm">
+                  <button className="rounded p-1 hover:bg-white/10" title="Grid view">
+                    <LayoutGrid className="h-5 w-5 text-gray-300" />
                   </button>
-                  <button className="rounded p-1 hover:bg-gray-100" title="List view">
-                    <List className="h-5 w-5 text-gray-600" />
+                  <button className="rounded p-1 hover:bg-white/10" title="List view">
+                    <List className="h-5 w-5 text-gray-300" />
                   </button>
                 </div>
-                <div className="flex items-center gap-2 rounded-lg border border-gray-200 p-2">
-                  <button className="flex items-center gap-1 rounded px-2 py-1 hover:bg-gray-100">
-                    <ArrowUpDown className="h-4 w-4" />
-                    <span className="text-sm">Sort</span>
+                <div className="flex items-center gap-2 rounded-lg border border-dark-accent bg-black/40 p-2 backdrop-blur-sm">
+                  <button className="flex items-center gap-1 rounded px-2 py-1 hover:bg-white/10">
+                    <ArrowUpDown className="h-4 w-4 text-gray-300" />
+                    <span className="text-sm text-gray-300">Sort</span>
                   </button>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-dark-accent bg-black/40 p-6 backdrop-blur-sm">
               <Suspense fallback={<SkeletonProductGrid />}>
                 {/* @ts-expect-error Server Component */}
                 <PaginatedProducts
@@ -141,37 +141,6 @@ const StoreTemplate = async ({
                   countryCode={countryCode}
                 />
               </Suspense>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Newsletter Section */}
-      <div className="border-t border-gray-200 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
-          <div className="relative isolate overflow-hidden rounded-2xl bg-gray-900 px-6 py-16 shadow-2xl sm:px-16 sm:py-24 lg:flex lg:gap-x-20 lg:px-24">
-            <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:text-left">
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                Stay Updated
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-300">
-                Subscribe to our newsletter for exclusive offers, new arrivals, and insider-only discounts.
-              </p>
-              <div className="mt-8 flex items-center justify-center gap-x-6 lg:justify-start">
-                <div className="flex max-w-md gap-x-4">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="min-w-0 flex-auto rounded-md border-0 bg-white/10 px-4 py-3 text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-white"
-                  />
-                  <Button
-                    variant="secondary"
-                    className="bg-white px-8 py-3 text-black hover:bg-gray-100"
-                  >
-                    Subscribe
-                  </Button>
-                </div>
-              </div>
             </div>
           </div>
         </div>

@@ -99,67 +99,128 @@ export default async function HomePage({ params: { countryCode } }: { params: { 
         </div>
       </div>
 
-      {/* Categories Grid */}
+      {/* Trending Now Section */}
       <div className="border-t border-dark-accent py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <Heading level="h2" className="mb-4 text-4xl font-bold text-white sm:text-5xl">
-              Shop by Category
+              Trending Now
             </Heading>
             <p className="text-xl text-gray-400">
-              Find your perfect style
+              Most loved pieces this season
+            </p>
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
+            <div className="group relative overflow-hidden rounded-2xl">
+              <div className="aspect-h-1 aspect-w-1">
+                <Image
+                  src="/trending-1.jpg"
+                  alt="Trending Collection 1"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <h3 className="text-2xl font-bold text-white">Summer Essentials</h3>
+                  <p className="mt-2 text-gray-300">Light, breathable pieces for the warmer days</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl">
+              <div className="aspect-h-1 aspect-w-1">
+                <Image
+                  src="/trending-2.jpg"
+                  alt="Trending Collection 2"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <h3 className="text-2xl font-bold text-white">Urban Collection</h3>
+                  <p className="mt-2 text-gray-300">Street style with an edge</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonials Section */}
+      <div className="border-t border-dark-accent py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <Heading level="h2" className="mb-4 text-4xl font-bold text-white sm:text-5xl">
+              What Our Customers Say
+            </Heading>
+            <p className="text-xl text-gray-400">
+              Real experiences from our community
             </p>
           </div>
 
           <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Category cards with hover effects */}
-            <Link href={`/${countryCode}/categories/t-shirts`} className="group relative overflow-hidden rounded-2xl">
-              <div className="aspect-h-9 aspect-w-16">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0"></div>
-                <Image
-                  src="/t-shirts-category.jpg"
-                  alt="T-Shirts Collection"
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
+            {/* Testimonial 1 */}
+            <div className="rounded-xl border border-dark-accent bg-black/40 p-8 backdrop-blur-sm">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="relative h-12 w-12 overflow-hidden rounded-full">
+                  <Image
+                    src="/testimonial-1.jpg"
+                    alt="Customer"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-white">Sarah M.</h4>
+                  <p className="text-gray-400">Verified Buyer</p>
+                </div>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="text-2xl font-semibold text-white">T-Shirts</h3>
-                <p className="mt-2 text-gray-300">Essential basics</p>
-              </div>
-            </Link>
+              <p className="text-gray-300">
+                &ldquo;The quality of their products is outstanding. Every piece I&apos;ve purchased has become a staple in my wardrobe.&rdquo;
+              </p>
+            </div>
 
-            <Link href={`/${countryCode}/categories/hoodies`} className="group relative overflow-hidden rounded-2xl">
-              <div className="aspect-h-9 aspect-w-16">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0"></div>
-                <Image
-                  src="/hoodies-category.jpg"
-                  alt="Hoodies Collection"
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
+            {/* Testimonial 2 */}
+            <div className="rounded-xl border border-dark-accent bg-black/40 p-8 backdrop-blur-sm">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="relative h-12 w-12 overflow-hidden rounded-full">
+                  <Image
+                    src="/testimonial-2.jpg"
+                    alt="Customer"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-white">James R.</h4>
+                  <p className="text-gray-400">Verified Buyer</p>
+                </div>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="text-2xl font-semibold text-white">Hoodies</h3>
-                <p className="mt-2 text-gray-300">Comfort meets style</p>
-              </div>
-            </Link>
+              <p className="text-gray-300">
+                &ldquo;Exceptional customer service and fast shipping. The attention to detail in packaging is impressive.&rdquo;
+              </p>
+            </div>
 
-            <Link href={`/${countryCode}/categories/accessories`} className="group relative overflow-hidden rounded-2xl">
-              <div className="aspect-h-9 aspect-w-16">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0"></div>
-                <Image
-                  src="/accessories-category.jpg"
-                  alt="Accessories Collection"
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
+            {/* Testimonial 3 */}
+            <div className="rounded-xl border border-dark-accent bg-black/40 p-8 backdrop-blur-sm">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="relative h-12 w-12 overflow-hidden rounded-full">
+                  <Image
+                    src="/testimonial-3.jpg"
+                    alt="Customer"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-white">Emma L.</h4>
+                  <p className="text-gray-400">Verified Buyer</p>
+                </div>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="text-2xl font-semibold text-white">Accessories</h3>
-                <p className="mt-2 text-gray-300">Complete your look</p>
-              </div>
-            </Link>
+              <p className="text-gray-300">
+                &ldquo;Love the sustainable approach and timeless designs. These pieces are worth every penny.&rdquo;
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -207,31 +268,6 @@ export default async function HomePage({ params: { countryCode } }: { params: { 
               <h3 className="mb-3 text-xl font-semibold text-white">Satisfaction Promise</h3>
               <p className="text-gray-400">30-day returns with our no-questions-asked guarantee.</p>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Newsletter Section */}
-      <div className="relative border-t border-dark-accent py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-white/5 to-black/0"></div>
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <Heading level="h2" className="mb-4 text-4xl font-bold text-white sm:text-5xl">
-              Join the Movement
-            </Heading>
-            <p className="mb-8 text-xl text-gray-300">
-              Get early access to drops and exclusive offers
-            </p>
-            <form className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="rounded-lg border border-dark-accent bg-black/20 px-6 py-4 text-white placeholder-gray-400 backdrop-blur-sm focus:border-white focus:outline-none focus:ring-1 focus:ring-white sm:w-96"
-              />
-              <Button type="submit" className="bg-white px-8 py-4 text-black hover:bg-gray-100">
-                Subscribe
-              </Button>
-            </form>
           </div>
         </div>
       </div>
