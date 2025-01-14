@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 import { Button, Heading } from "@medusajs/ui"
-import { Grid, List, Search, ArrowUpDown } from "@medusajs/icons"
+import { LayoutGrid, List, Search, ArrowUpDown } from "lucide-react"
 
 import SkeletonProductGrid from "@modules/skeletons/templates/skeleton-product-grid"
 import RefinementList from "@modules/store/components/refinement-list"
@@ -117,7 +117,7 @@ const StoreTemplate = async ({
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2 rounded-lg border border-gray-200 p-2">
                   <button className="rounded p-1 hover:bg-gray-100" title="Grid view">
-                    <Grid className="h-5 w-5 text-gray-600" />
+                    <LayoutGrid className="h-5 w-5 text-gray-600" />
                   </button>
                   <button className="rounded p-1 hover:bg-gray-100" title="List view">
                     <List className="h-5 w-5 text-gray-600" />
